@@ -1,4 +1,5 @@
-(async() => {
+export default async function handler(req, res) {
+
     const neo4j = require('neo4j-driver')
 
     const uri = 'neo4j+s://06f06c4a.databases.neo4j.io';
@@ -29,4 +30,6 @@
     }
     // Don't forget to close the driver connection when you're finished with it
     await driver.close()
+
+    res.status(200).json({ name: 'Justin Doe' });
 })();
